@@ -61,5 +61,43 @@ public class StatistikNilai {
         System.out.println("Tertinggi       : " + tertinggi);
         System.out.println("Terendah        : " + terendah);
 
+        int diAtasRata2 = 0;
+        for (int x : daftar) {
+            if (x > rataRata) {
+                diAtasRata2++;
+            }
+        }
+        System.out.println("Di atas rata2   : " + diAtasRata2 + " orang");
+
+        int[] jumlahGrade = new int[5];
+        for (int x : daftar) {
+            if (x >= 80) {
+                jumlahGrade[0]++;
+            } else if (x >= 70) {
+                jumlahGrade[1]++;
+            } else if (x >= 60) {
+                jumlahGrade[2]++;
+            } else if (x >= 50) {
+                jumlahGrade[3]++;
+            } else {
+                jumlahGrade[4]++;
+            }
+        }
+
+        System.out.print("Distribusi      : ");
+        char[] gradeHuruf = {'A', 'B', 'C', 'D', 'E'};
+        for (int i = 0; i < jumlahGrade.length; i++) {
+            System.out.print(gradeHuruf[i] + "=" + jumlahGrade[i] + " ");
+        }
+        System.out.println();
+
+        ArrayList<Integer> terurut = new ArrayList<>(daftar);
+        Collections.sort(terurut);
+
+        System.out.println("Terurut         : " + terurut);
+        System.out.println("Urutan asli     : " + daftar);
+    }
+}
+
     }
 }
